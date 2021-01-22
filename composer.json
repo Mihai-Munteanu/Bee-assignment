@@ -1,0 +1,6 @@
+{
+    "require-dev": {
+        "pestphp/pest": "^1.0",
+        "pestphp/pest-plugin-global-assertions": "^1.0"
+    }
+}

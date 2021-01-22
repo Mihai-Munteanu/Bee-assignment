@@ -1,0 +1,54 @@
+{
+    "name": "pestphp/pest-plugin-global-assertions",
+    "description": "A plugin to add global assertions to Pest",
+    "keywords": [
+        "php",
+        "framework",
+        "pest",
+        "unit",
+        "test",
+        "testing",
+        "global",
+        "assertions"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3 || ^8.0",
+        "pestphp/pest": "^1.0",
+        "pestphp/pest-plugin": "^1.0"
+    },
+    "conflict": {
+        "pestphp/pest": "<1.0"
+    },
+    "autoload": {
+        "files": [
+            "src/compiled.php"
+        ]
+    },
+    "require-dev": {
+        "pestphp/pest-dev-tools": "dev-master"
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist"
+    },
+    "scripts": {
+        "compile": "@php scripts/compile.php",
+        "lint": "php-cs-fixer fix -v",
+        "test:lint": "php-cs-fixer fix -v --dry-run",
+        "test:types": "phpstan analyse --ansi",
+        "test:unit": "pest --colors=always",
+        "test": [
+            "@test:lint",
+            "@test:types",
+            "@test:unit"
+        ]
+    }
+}
